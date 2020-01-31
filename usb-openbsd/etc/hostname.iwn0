@@ -1,0 +1,7 @@
+#
+join <base_wifi_SSID>_5G wpakey <my secret PIN>
+join <base_wifi_SSID> wpakey  <my secret PIN>
+join <base_wifi_SSID>_EXT wpakey <my secret PIN>
+join <base_wifi_SSID>_5G_EXT wpakey <my secret PIN>
+
+dhcp
