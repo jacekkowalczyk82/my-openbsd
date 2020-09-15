@@ -1,6 +1,0 @@
-join TP-Link_4F5B_5G wpakey 70578249
-join TP-Link_4F5B wpakey 70578249
-join TP-Link_4F5B_EXT wpakey 70578249
-join TP-Link_4F5B_5G_EXT wpakey 70578249
-join Wless-eng wpakey "W1r3l355!"
-dhcp
