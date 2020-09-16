@@ -1,0 +1,14 @@
+47aac4dca7e833ff.b none swap sw
+47aac4dca7e833ff.a / ffs rw 1 1
+47aac4dca7e833ff.k /home ffs rw,nodev,nosuid 1 2
+47aac4dca7e833ff.d /tmp ffs rw,nodev,nosuid 1 2
+47aac4dca7e833ff.f /usr ffs rw,nodev 1 2
+47aac4dca7e833ff.g /usr/X11R6 ffs rw,nodev 1 2
+47aac4dca7e833ff.h /usr/local ffs rw,wxallowed,nodev 1 2
+47aac4dca7e833ff.j /usr/obj ffs rw,nodev,nosuid 1 2
+47aac4dca7e833ff.i /usr/src ffs rw,nodev,nosuid 1 2
+47aac4dca7e833ff.e /var ffs rw,nodev,nosuid 1 2
+
+#sudo mount /dev/sd0l /extra
+47aac4dca7e833ff.l /extra ffs rw,nodev,nosuid 1 2
+
