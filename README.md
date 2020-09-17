@@ -1,6 +1,12 @@
 # my-openbsd
+
 my openbsd setup configs and manuals
 
+## Internet Resources 
+
+* https://sohcahtoa.org.uk/openbsd.html
+* https://www.patreon.com/posts/18039949
+* https://www.youtube.com/watch?v=XmMlE5QVJ08
 
 ## Install OpenBSD to USB stick using qemu
 
@@ -30,6 +36,7 @@ sudo dd if=openBSD.img of=/dev/sdb bs=256k status=progress
 
 ## Install mate desktop 
 
+
 ```
 pkg_add mate-desktop mate-notification-daemon mate-terminal mate-panel mate-session-manager mate-icon-theme mate-control-center mate-calc caja pluma 
 pkg_add mate
@@ -37,16 +44,25 @@ pkg_add dbus
 #pkg_add hal
 
 ```
-edit file `/etc/rc.conf.local`
+
+* Install additional software 
 
 ```
-pkg_scripts="dbus_daemon avahi_daemon"
-dbus_enable=YES
-#hald_enable=YES
+pkg_add sudo 
+pkg_add vim nano git curl mc chromium 
+```
+
+* Edit file `/etc/rc.conf.local`
+
+```
+xenodm_flags=                                                                                                                                                           
+pkg_scripts="dbus_daemon avahi_daemon"                                                                                                                                  
+dbus_enable=YES                                                                                                                                                         
+#hald_enable=YES    
 
 ```
 
-Create files `/etc/polkit-1/rules.d/05-restart-stop.rules`
+* Create files `/etc/polkit-1/rules.d/05-restart-stop.rules`
 
 ```
 polkit.addRule (function(action,subject) {
@@ -58,4 +74,12 @@ polkit.addRule (function(action,subject) {
         return polkit.Result.YES;
     }
 });
+```
+
+
+## System update 
+
+```
+sudo syspatch 
+sudo pkg_add -u 
 ```
