@@ -83,3 +83,12 @@ polkit.addRule (function(action,subject) {
 sudo syspatch 
 sudo pkg_add -u 
 ```
+
+## Install DWM 
+
+```
+sudo pkg_add dwm dmenu st sakura neofetch scrot
+sudo pkg_add compton 
+
+```
+
