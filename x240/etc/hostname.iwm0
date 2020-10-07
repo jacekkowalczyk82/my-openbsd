@@ -1,0 +1,7 @@
+#
+join <BASE_SSID>_5G wpakey <SECRET>
+join <BASE_SSID> wpakey <SECRET>
+join <BASE_SSID>_EXT wpakey <SECRET>
+join <BASE_SSID>_5G_EXT wpakey <SECRET>
+
+dhcp
