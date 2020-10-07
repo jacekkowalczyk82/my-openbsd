@@ -45,11 +45,11 @@ case "$-" in
 	#PROMPT="<$USER@$HOST:!>$PS1S"
 	
         # Original 
-        PPROMPT='$USER:$PWD:!'"$PS1S"
-	#PPROMPT='<$USER@$HOST:$PWD:!>'"$PS1S"
+        ### PPROMPT='$USER:$PWD:!'"$PS1S"
+	### #PPROMPT='<$USER@$HOST:$PWD:!>'"$PS1S"
         
         # Jacek, changed to 
-        # PPROMPT='<$USER@$HOST:$PWD:!>'"$PS1S"
+        PPROMPT='<$USER@$HOST:$PWD:!>'"$PS1S"
         # Jacek 
         
 	PS1=$PPROMPT
@@ -111,9 +111,9 @@ case "$-" in
 		eval stripe
 		eval istripe
 		# Original 
-                PS1=$PROMPT
+                ### PS1=$PROMPT
                 # Jacek changed to 
-                # PS1=$PPROMPT
+                PS1=$PPROMPT
                 
 	fi
 	alias quit=exit
