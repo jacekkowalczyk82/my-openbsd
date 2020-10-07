@@ -92,3 +92,128 @@ sudo pkg_add compton
 
 ```
 
+
+
+
+
+# Install OpenBSD 6.7 at thinkpad x240 
+
+### Prepare USB stick 
+
+```
+sudo dd if=install67.fs of=/dev/sda bs=1m
+
+```
+
+### Post install steps / configuation and packages 
+
+* Install pase packages 
+
+```
+su -
+pkg_add sudo git nano mc rsync 
+
+```
+
+* Edit `/etc/sudoers`  and uncomment:
+
+```
+%wheel  ALL=(ALL) SETENV: ALL
+```
+
+* Add to `.profile` file
+
+```
+export ENV=$HOME/.kshrc
+```
+
+* Create `~/.kshrc` file:
+
+```
+. /etc/ksh.kshrc
+
+HISTFILE="$HOME/.ksh_history"
+HISTSIZE=5000
+```
+
+* Install Firmware 
+
+```
+sudo fw_update -a
+
+```
+
+
+* Create file `/etc/hostname.iwm0` with WiFi configuration
+
+```
+join <MY_SSID>_5G wpakey <MY_SECRET_PIN>
+join <MY_SSID> wpakey <MY_SECRET_PIN>
+join <MY_SSID>_EXT wpakey <MY_SECRET_PIN>
+join <MY_SSID>_5G_EXT wpakey <MY_SECRET_PIN>
+
+dhcp
+```
+
+* Connect to wifi 
+
+```
+sudo ifconfig iwm0 nwid <SSID> wpakey <SECRET>
+sudo dhclient iwm0
+```
+
+* Install GUI packages 
+
+```
+sudo pkg_add mate-desktop mate-notification-daemon mate-terminal mate-panel mate-session-manager mate-icon-theme mate-control-center mate-calc caja pluma  
+sudo pkg_add mate eom 
+sudo pkg_add dbus
+
+sudo pkg_add chromium firefox
+
+```
+
+* Edit file `/etc/rc.conf.local`
+
+```
+xenodm_flags=
+pkg_scripts="dbus_daemon avahi_daemon"
+dbus_enable=YES
+```
+
+* Create file `/etc/polkit-1/rules.d/05-restart-stop.rules`
+
+```
+polkit.addRule (function(action,subject) {
+    if (action.id == "org.freedesktop.consolekit.system.stop" || 
+        action.id == "org.freedesktop.consolekit.system.stop-multiple-users" ||
+        action.id == "org.freedesktop.consolekit.system.restart" || 
+        action.id == "org.freedesktop.consolekit.system.restart-multiple-users" 
+        && subject.isInGroup ("users")) {
+        return polkit.Result.YES;
+    }
+});
+
+```
+
+* Edit `/etc/X11/xenodm/Xsetup_0` and comment all and set 
+
+```
+xset b off
+
+```
+
+* Create .xinitrc file
+
+```
+exec mate-session
+
+```
+
+* Link .xsesion to .xinitrc
+
+```
+ln -s .xinitrc .xsession
+```
+
+* `sudo reboot`
