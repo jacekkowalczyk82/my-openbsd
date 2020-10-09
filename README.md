@@ -219,3 +219,50 @@ ln -s .xinitrc .xsession
 ```
 
 * `sudo reboot`
+
+
+## Install development environment for blogging with jekyll
+
+```
+sudo pkg_add ruby
+
+
+sudo gem27 install bundler jekyll
+#gem27 install bundler jekyll
+cd <jekyll blog repository>
+bundle27 config set path 'vendor/bundle'
+bundle27 install
+bundle27 exec jekyll serve
+
+# diff tool 
+sudo pkg_add kompare 
+
+```
+
+# Install DWM 
+
+* Packages 
+
+```
+sudo pkg_add dwm st sakura dmenu neofetch nitrogen scrot compton
+
+```
+
+* Configure `.xinitrc` file
+
+```
+## DWM 
+xset -b 
+setxkbmap pl 
+
+#exec xrandr -s 1280x720 & 
+exec nitrogen --restore & 
+exec compton -b & 
+
+while true ; do xsetroot -name "`date '+%Y-%m-%d %H:%M.%S'` Load15: `uptime |awk -F "load" '{print $2}' |cut -d " " -f 5 `; Up: `uptime |cut -d "," -f 1 |awk -F "up" '{print $2}'`"; sleep 1; done & 
+
+
+exec dwm 
+
+
+```

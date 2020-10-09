@@ -11,7 +11,7 @@
 xset -b 
 setxkbmap pl 
 
-exec xrandr -s 1280x720 & 
+#exec xrandr -s 1280x720 & 
 exec nitrogen --restore & 
 exec compton -b & 
 
