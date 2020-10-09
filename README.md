@@ -5,8 +5,10 @@ my openbsd setup configs and manuals
 ## Internet Resources 
 
 * https://sohcahtoa.org.uk/openbsd.html
-* https://www.patreon.com/posts/18039949
 * https://www.youtube.com/watch?v=XmMlE5QVJ08
+* https://www.patreon.com/posts/18039949
+* https://www.gabsoftware.com/tutorials/tutorial-how-to-install-openbsd-6-1-step-by-step/
+
 
 ## Install OpenBSD to USB stick using qemu
 
