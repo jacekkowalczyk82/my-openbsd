@@ -266,3 +266,10 @@ exec dwm
 
 
 ```
+
+## Update system and packages
+
+```
+sudo syspatch 
+sudo pkg_add -u 
+```
