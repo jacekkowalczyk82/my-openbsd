@@ -1,0 +1,14 @@
+#!/usr/bin/env ksh
+
+# Copied from https://github.com/daniel-mueller/bsd-dots
+
+FONT2="DejaVu Sans Mono-7"
+FONT3="DejaVu Sans Mono:style=Regular"
+FONT="DejaVu Sans Mono:size=8"
+COLOR="#282828"
+FONTCOLOR="#ebdbb2"
+
+GEO="1366x20"
+
+
+~/bin/bar.sh | lemonbar -dp -g "$GEO" -B "$COLOR" -F $FONTCOLOR -f "$FONT" -f "$FONT2" -f "$FONT3" &

@@ -8,7 +8,7 @@ sticky yes
 command mate-terminal   mate-termminal      
 command roxterm		roxterm
 command xterm           xterm
-
+command xterm-geometry  "xterm -geometry 150x50+100+100 "
 command firefox		firefox
 command chromium 	chrome
 command geany		geany
