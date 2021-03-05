@@ -6,14 +6,18 @@ sticky yes
 
 # Any entry here is shown in the application menu
 command mate-terminal   mate-termminal      
-command roxterm		roxterm
+command CRT             cool-retro-term
+command st              st
+command roxterm	        roxterm
 command xterm           xterm
 command xterm-geometry  "xterm -geometry 150x50+100+100 "
-command firefox		firefox
-command chromium 	chrome
-command geany		geany
+command firefox	        firefox
+command chromium        chrome
+command geany	        geany
+command leafpad         leafpad
 command pluma           pluma
-command caja		caja
+command pcmanfm         pcmanfm
+command caja	        caja
 
 #command xmms		xmms
 #command audacious      audacious  
@@ -36,7 +40,7 @@ ignore xclock
  
 bind-key CM-r		window-menu-label
 bind-key CS-Return	"xterm -e top"
-bind-key 4S-Return      roxterm
+bind-key 4S-Return      cool-retro-term
 bind-key C4-equal	window-vmaximize
 bind-key C4S-equal	window-hmaximize
 bind-key M-1		group-only-1

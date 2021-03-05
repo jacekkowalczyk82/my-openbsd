@@ -36,6 +36,8 @@ setxkbmap pl
 
 exec ~/bin/barstarter.sh & 
 exec xsetroot -solid grey &
-exec xterm -geometry 150x50+100+100 &
+exec compton -b & 
+exec st &  
+#exec xterm -geometry 150x50+100+100 &
 exec nitrogen --restore &
 exec cwm
