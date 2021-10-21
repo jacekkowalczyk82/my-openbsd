@@ -9,6 +9,31 @@ my openbsd setup configs and manuals
 * https://www.patreon.com/posts/18039949
 * https://www.gabsoftware.com/tutorials/tutorial-how-to-install-openbsd-6-1-step-by-step/
 
+## Upgrade from 6.9 to 7.0 
+
+* https://www.openbsd.org/faq/upgrade70.html
+
+```
+sudo sysupgrade
+
+after rebooting 
+sysmerge
+
+# two files I needed to update 
+# /etc/ssh/sshd_config
+# to enable X11 forwarding 
+
+# /etc/X11/xenodm/Xsetup_0
+# to disable xconsole
+
+sudo rm -f /usr/X11R6/lib/libdmx.* \
+	  /usr/X11R6/include/X11/extensions/dmxext.h \
+	  /usr/X11R6/lib/pkgconfig/dmx.pc \
+	  /usr/X11R6/man/man3/DMX*.3
+      
+
+sudo pkg_add -u
+```
 
 ## Install OpenBSD to USB stick using qemu
 
