@@ -6,6 +6,8 @@ sticky yes
 
 # Any entry here is shown in the application menu
 command mate-terminal   mate-termminal      
+command sakura          sakura
+command kitty           kitty
 command CRT             cool-retro-term
 command st              st
 command roxterm	        roxterm
@@ -40,7 +42,7 @@ ignore xclock
  
 bind-key CM-r		window-menu-label
 bind-key CS-Return	"xterm -e top"
-bind-key 4S-Return      cool-retro-term
+bind-key 4S-Return      kitty
 bind-key C4-equal	window-vmaximize
 bind-key C4S-equal	window-hmaximize
 bind-key M-1		group-only-1
