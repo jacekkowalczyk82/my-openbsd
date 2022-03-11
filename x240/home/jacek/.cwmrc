@@ -20,6 +20,7 @@ command leafpad         leafpad
 command pluma           pluma
 command pcmanfm         pcmanfm
 command caja	        caja
+command batmon          batmon
 
 #command xmms		xmms
 #command audacious      audacious  
